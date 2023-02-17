@@ -1,20 +1,35 @@
-import { Text, View, SafeAreaView, FlatList } from 'react-native';
+import { View, SafeAreaView, FlatList } from 'react-native';
 import { useState } from 'react';
 import { COLORS, ShopData } from '../constants';
 import { ShopCard, HomeHeader, FocusedStatusBar } from '../components';
 
 const Home = () => {
+
+    const [shopData, setShopData] = useState(ShopData);
+    const handleSearch = (value) => {
+        if (!value.length) return setShopData(ShopData);
+
+        const filteredData = ShopData.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()));
+
+        if (filteredData.length) {
+            setShopData(filteredData);
+        } else {
+            //he does something like: setShopData(ShopData);
+            setShopData(ShopData);
+        }
+    }
+
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <FocusedStatusBar background={COLORS.primary} />
+            {/*<FocusedStatusBar background={COLORS.primary} /> r*/}
             <View style={{ flex: 1 }}>
                 <View style={{ zIndex: 0 }}>
                     <FlatList
-                        data={ShopData}
+                        data={shopData}
                         renderItem={({ item }) => <ShopCard data={item} />}
                         keyExtractor={(item) => item.id}
                         showsVerticalScrollIndicator={false}
-                        ListHeaderComponent={<HomeHeader />} />
+                        ListHeaderComponent={<HomeHeader onSearch={handleSearch} />} />
                 </View>
 
                 <View style={{

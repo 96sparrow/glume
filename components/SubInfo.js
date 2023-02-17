@@ -19,7 +19,6 @@ export const ShopTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
     )
 }
 
-
 export const ImageCmp = ({ imgUrl, index }) => {
     return (
         <Image
@@ -77,7 +76,6 @@ export const SubInfo = () => {
     )
 }
 
-
 export const EthPrice = ({ price }) => {
     return (
         <View style={{
@@ -95,7 +93,7 @@ export const EthPrice = ({ price }) => {
                 fontFamily: FONTS.medium,
                 fontSize: SIZES.font,
                 color: COLORS.primary
-            }}></Text>
+            }}>{price}</Text>
         </View>
     )
 }

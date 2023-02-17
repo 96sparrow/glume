@@ -14,9 +14,9 @@ export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 ...SHADOWS.light,
-                ...props,
-                onPress: { handlePress }
-            }}>
+                ...props
+            }}
+            onPress={handlePress}>
             <Image source={imgUrl} resizeMode='contain' style={{ width: 24, height: 24 }} />
 
         </TouchableOpacity>
@@ -30,9 +30,10 @@ export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
                 borderRadius: SIZES.extraLarge,
                 minWidth: minWidth,
                 padding: SIZES.small,
-                ...props,
-                onPress: { handlePress }
-            }}>
+                ...props
+            }}
+            onPress={handlePress}
+        >
             <Text style={{
                 fontFamily: FONTS.semiBold,
                 fontSize: fontSize,
