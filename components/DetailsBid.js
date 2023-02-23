@@ -12,7 +12,7 @@ const DetailsBid = ({ bid }) => {
             justifyContent: 'space-between',
             alignItems: 'center',
             marginVertical: SIZES.base,
-            paddingHorizontal: SIZES.base * 2      
+            paddingHorizontal: SIZES.base * 2
         }}>
             <Image
                 source={bid.image}
@@ -39,7 +39,7 @@ const DetailsBid = ({ bid }) => {
                     {bid.data}
                 </Text>
             </View>
-            <EthPrice price={bid.price} />
+            <EthPrice stars={bid.stars} />
         </View>
     )
 }

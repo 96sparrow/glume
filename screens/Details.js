@@ -14,12 +14,12 @@ const DetailsHeader = ({ data, navigation }) => (
             imgUrl={assets.left}
             handlePress={() => navigation.goBack()}
             left={15}
-            top={StatusBar.currentHeight + 10}
+            top={StatusBar.currentHeight + 50}
         />
         <CircleButton
             imgUrl={assets.heart}
             right={15}
-            top={StatusBar.currentHeight + 10}
+            top={StatusBar.currentHeight + 50}
         />
     </View>
 )
@@ -28,7 +28,7 @@ const Details = ({ route, navigation }) => {
     const { data } = route.params;
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+        <View style={{ flex: 1, backgroundColor: '#e8f7fa' }}>
             {/* <FocusedStatusBar
                 backgroundColor='transparent'
                 translucent={true}
@@ -69,7 +69,7 @@ const Details = ({ route, navigation }) => {
             }}>
                 <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark} />
             </View>
-        </SafeAreaView>
+        </View>
     )
 }
 

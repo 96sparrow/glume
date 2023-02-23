@@ -1,5 +1,7 @@
 import { View, Text, Image } from 'react-native';
 import { SIZES, FONTS, COLORS, SHADOWS, assets } from '../constants';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
 
 export const ShopTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
     return (
@@ -76,24 +78,32 @@ export const SubInfo = () => {
     )
 }
 
-export const EthPrice = ({ price }) => {
+const showStars = (starsNumber) => {
+    let stars = [];
+    let i;
+    const emptyStars = 5 - starsNumber;
+    for (i = 1; starsNumber > 1 && i <= 5; ++i) {
+        stars.push(<MaterialIcons key={i} name="star" size={30} color="#FFA000" />);
+        starsNumber--;
+    }
+    if (starsNumber > 0) stars.push(<MaterialIcons key={i} name="star-half" size={30} color="#FFA000" />);
+
+    for (let j = 1; j <= emptyStars; ++j) {
+        stars.push(<MaterialIcons key={j + i} name="star-border" size={30} color="#FFA000" />);
+    }
+    return stars;
+}
+
+export const EthPrice = ({ stars }) => {
     return (
         <View style={{
             flexDirection: 'row',
             alignItems: 'center'
         }}>
-            <Image
-                source={assets.eth}
-                resizeMode='contain'
-                style={{
-                    width: 20, height: 20, marginRight: 2
-                }}
-            />
-            <Text style={{
-                fontFamily: FONTS.medium,
-                fontSize: SIZES.font,
-                color: COLORS.primary
-            }}>{price}</Text>
+
+            {
+                showStars(stars)
+            }
         </View>
     )
 }

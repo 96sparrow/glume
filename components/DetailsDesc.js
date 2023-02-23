@@ -17,12 +17,12 @@ const DetailsDesc = ({ data }) => {
             }}>
                 <ShopTitle
                     title={data.name}
-                    subTitle={data.creator}
+                    subTitle={data.address}
                     titleSize={SIZES.extraLarge}
                     subTitleSize={SIZES.font}
                 />
 
-                <EthPrice price={data.price} />
+                <EthPrice stars={data.stars} />
             </View>
 
             <View style={{ marginVertical: SIZES.extraLarge * 1.5 }}>
