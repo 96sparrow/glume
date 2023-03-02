@@ -6,6 +6,7 @@ const HomeHeader = ({ onSearch }) => {
         <View style={{
             backgroundColor: COLORS.primary,
             padding: SIZES.font,
+            marginTop: 40
         }}>
             <View style={{
                 flexDirection: 'row',
@@ -26,10 +27,10 @@ const HomeHeader = ({ onSearch }) => {
             </View>
             <View style={{ marginVertical: SIZES.font }}>
                 <Text style={{ fontFamily: FONTS.regular, fontSize: SIZES.small, color: COLORS.white }}>
-                    Hello, Victoria! 👋
+                    Ciao, Claudio! 👋
                 </Text>
                 <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.large, color: COLORS.white, marginTop: SIZES.base / 2 }}>
-                    Let's find a masterpiece
+                    Troviamo un locale Gluten Free
                 </Text>
             </View>
 

@@ -1,5 +1,5 @@
 import { View, Text, Image } from 'react-native';
-import { EthPrice } from './SubInfo';
+import { Rate } from './SubInfo';
 import { COLORS, SIZES, FONTS } from '../constants';
 
 import React from 'react'
@@ -39,7 +39,7 @@ const DetailsBid = ({ bid }) => {
                     {bid.data}
                 </Text>
             </View>
-            <EthPrice stars={bid.stars} />
+            <Rate stars={bid.stars} />
         </View>
     )
 }

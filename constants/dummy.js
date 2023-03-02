@@ -6,6 +6,7 @@ const ShopData = [
     name: "Gli Antenati",
     address: "Corso Cavour, 65",
     stars: 4.5,
+    foodTypes: ['pizza', 'sandwiches'],
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
     image: assets.nft01,
@@ -38,6 +39,7 @@ const ShopData = [
     name: "Celiaki",
     address: "Via Garibaldi, 18",
     stars: 3,
+    foodTypes: ['pasta', 'pizza'],
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis.",
     image: assets.nft02,
@@ -56,6 +58,7 @@ const ShopData = [
     name: "Dolci Tentazioni",
     address: "Via XXIV Maggio, 40",
     stars: 1,
+    foodTypes: ['dessert'],
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis. Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis.",
     image: assets.nft03,
@@ -120,6 +123,7 @@ const ShopData = [
     name: "Passione Eterna",
     address: "Piazza Duomo, 10",
     stars: 0,
+    foodTypes: ['pizza', 'pasta', 'sandwiches'],
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
     image: assets.nft05,
@@ -138,6 +142,7 @@ const ShopData = [
     name: "Toronero",
     address: "Stazione Centrale",
     stars: 0.5,
+    foodTypes: ['dessert'],
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis.",
     image: assets.nft06,
@@ -184,6 +189,7 @@ const ShopData = [
     name: "Il forno senza glutine",
     address: "Viale San Martino, 33",
     stars: 3,
+    foodTypes: ['pizza', 'sandwiches'],
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis. Ullamcorper platea penatibus ornare egestas nulla ligula hendrerit nisl suscipit sociosqu maximus, tincidunt aptent habitant purus pharetra ultrices dapibus laoreet nisi lacinia. Porta malesuada netus vel sapien conubia porttitor aliquam ut pretium ante litora molestie senectus magna egestas sociosqu, eget aliquet fames pharetra felis posuere varius fringilla quisque in arcu montes eu ullamcorper.",
     image: assets.nft07,

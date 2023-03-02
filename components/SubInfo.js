@@ -1,5 +1,5 @@
 import { View, Text, Image } from 'react-native';
-import { SIZES, FONTS, COLORS, SHADOWS, assets } from '../constants';
+import { SIZES, FONTS, COLORS, SHADOWS, assets, FOOD } from '../constants';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 
@@ -94,19 +94,45 @@ const showStars = (starsNumber) => {
     return stars;
 }
 
-export const EthPrice = ({ stars }) => {
+const showFoodTypes = (foodTypes) => {
+    let i = 0;
+    let foodTypesToShow = [];
+    for (let food of foodTypes) {
+        if (FOOD.includes(food)) {
+            foodTypesToShow.push(<ImageCmp imgUrl={assets.person01} index={i} key={`Food-${i}`} />);
+        }
+
+        i++;
+    }
+    return foodTypesToShow;
+}
+
+export const Rate = ({ stars }) => {
     return (
         <View style={{
             flexDirection: 'row',
             alignItems: 'center'
         }}>
-
             {
                 showStars(stars)
             }
         </View>
     )
 }
+
+export const FoodTypes = ({ foodTypes }) => {
+    return (
+        <View style={{
+            flexDirection: 'row',
+            alignItems: 'center'
+        }}>
+            {
+                showFoodTypes(foodTypes)
+            }
+        </View>
+    )
+}
+
 
 export const People = () => {
     return (

@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native';
 import { useState } from 'react';
 
-import { EthPrice, ShopTitle } from './SubInfo';
+import { Rate, ShopTitle } from './SubInfo';
 import { COLORS, SIZES, FONTS } from '../constants';
 
 const DetailsDesc = ({ data }) => {
@@ -22,7 +22,7 @@ const DetailsDesc = ({ data }) => {
                     subTitleSize={SIZES.font}
                 />
 
-                <EthPrice stars={data.stars} />
+                <Rate stars={data.stars} />
             </View>
 
             <View style={{ marginVertical: SIZES.extraLarge * 1.5 }}>
