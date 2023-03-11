@@ -4,6 +4,7 @@ import Home from './screens/Home';
 import Details from './screens/Details';
 import { useFonts } from 'expo-font';
 import { COLORS } from './constants';
+import Credits from './screens/Credits';
 
 const Stack = createStackNavigator();
 
@@ -34,6 +35,7 @@ const App = () => {
         initialRouteName={Home} >
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="Credits" component={Credits} />
       </Stack.Navigator>
     </NavigationContainer>
   );

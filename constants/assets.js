@@ -18,6 +18,14 @@ import person02 from "../assets/images/person02.png";
 import person03 from "../assets/images/person03.png";
 import person04 from "../assets/images/person04.png";
 
+import hamburger from "../assets/images/hamburger.png";
+import pizza from "../assets/images/pizza.png";
+import pasta from "../assets/images/pasta.png";
+import dolci from "../assets/images/dolci.png";
+
+import info from "../assets/images/info.png";
+import close from "../assets/images/close.png";
+
 export default {
   badge,
   eth,
@@ -38,4 +46,12 @@ export default {
   person02,
   person03,
   person04,
+
+  hamburger,
+  pizza,
+  pasta,
+  dolci,
+
+  info,
+  close
 };

@@ -1,13 +1,26 @@
-import { View, Text, Image, TextInput } from 'react-native';
-import { COLORS, FONTS, SIZES, assets } from '../constants';
+import { View, Text, Image, TextInput, TouchableWithoutFeedback } from 'react-native';
+import { COLORS, FONTS, SIZES, assets, FOOD } from '../constants';
+import { CircleButton } from './Button';
+import {
+    useState
+} from 'react';
+import LegendModal from './LegendModal';
 
 const HomeHeader = ({ onSearch }) => {
+
+    const [isModalVisible, setModalVisible] = useState(false);
+
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+    }
+
     return (
         <View style={{
             backgroundColor: COLORS.primary,
             padding: SIZES.font,
             marginTop: 40
         }}>
+            <LegendModal open={isModalVisible} onBackdropPressHandle={() => toggleModal()} />
             <View style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
@@ -29,9 +42,18 @@ const HomeHeader = ({ onSearch }) => {
                 <Text style={{ fontFamily: FONTS.regular, fontSize: SIZES.small, color: COLORS.white }}>
                     Ciao, Claudio! 👋
                 </Text>
-                <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.large, color: COLORS.white, marginTop: SIZES.base / 2 }}>
-                    Troviamo un locale Gluten Free
-                </Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.large, color: COLORS.white, marginTop: SIZES.base / 2 }}>
+                        Troviamo un locale Gluten Free
+                    </Text>
+                    <CircleButton
+                        width={SIZES.large}
+                        height={SIZES.large}
+                        backgroundColor={COLORS.primary}
+                        imgUrl={assets.info} right={30}
+                        handlePress={() => setModalVisible(true)}
+                    />
+                </View>
             </View>
 
 

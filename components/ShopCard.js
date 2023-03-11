@@ -44,10 +44,10 @@ const ShopCard = ({ data }) => {
                         marginTop: SIZES.font,
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        alignItems: 'center'
+                        alignItems: 'center',
                     }}>
                         <Rate stars={data.stars} />
-                        <FoodTypes foodTypes={['pizza', 'pasta']}></FoodTypes>
+                        <FoodTypes foodTypes={data.foodTypes}></FoodTypes>
                         {/* VIEW WITH FOOD SYMBOLS: PIZZA, PASTA, ... */}
                         {/* <RectButton minWidth={120} fontSize={SIZES.font} handlePress={() => navigation.navigate('Details', { data })} /> */}
                     </View>

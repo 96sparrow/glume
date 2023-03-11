@@ -1,10 +1,8 @@
 const FOOD = [
     PIZZA = 'pizza',
-    RESTAURANT = 'restaurant',
     PASTA = 'pasta',
-    HAMBURGERS = 'hamburgers',
-    SANDWICHES = 'sandwiches',
-    DESSERT = 'dessert',
+    HAMBURGER = 'hamburger',
+    SWEET = 'dolci',
 ]
 
 export { FOOD };

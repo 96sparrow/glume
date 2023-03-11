@@ -21,15 +21,15 @@ export const ShopTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
     )
 }
 
-export const ImageCmp = ({ imgUrl, index }) => {
+export const ImageCmp = ({ imgUrl, index, marginLeft = 0, subtractSize = 0 }) => {
     return (
         <Image
             source={imgUrl}
             resizeMode='contain'
             style={{
-                width: 48,
-                height: 48,
-                marginLeft: index === 0 ? 0 : -SIZES.font
+                width: 48 - subtractSize,
+                height: 48 - subtractSize,
+                marginLeft: index === 0 ? 0 : -SIZES.font + marginLeft
             }}
         />
     )
@@ -97,9 +97,10 @@ const showStars = (starsNumber) => {
 const showFoodTypes = (foodTypes) => {
     let i = 0;
     let foodTypesToShow = [];
-    for (let food of foodTypes) {
+    for (let food of foodTypes.sort()) {
         if (FOOD.includes(food)) {
-            foodTypesToShow.push(<ImageCmp imgUrl={assets.person01} index={i} key={`Food-${i}`} />);
+            const imageSrc = assets[food];
+            foodTypesToShow.push(<ImageCmp imgUrl={imageSrc} index={i} marginLeft={20} subtractSize={6} key={`Food-${i}`} />);
         }
 
         i++;
@@ -124,7 +125,9 @@ export const FoodTypes = ({ foodTypes }) => {
     return (
         <View style={{
             flexDirection: 'row',
-            alignItems: 'center'
+            width: '100%',
+            flex: 1,
+            justifyContent: 'flex-end'
         }}>
             {
                 showFoodTypes(foodTypes)
