@@ -1,11 +1,11 @@
 import { View, Text } from 'react-native';
 import { useState } from 'react';
 
-import { Rate, ShopTitle } from './SubInfo';
+import { FoodTypes, Rate, ShopTitle } from './SubInfo';
 import { COLORS, SIZES, FONTS } from '../constants';
 
 const DetailsDesc = ({ data }) => {
-    const [text, setText] = useState(data.description.slice(0, 100));
+    const [text, setText] = useState(data.description.slice(0, SIZES.descriptionSize));
     const [readMore, setReadMore] = useState(false);
     return (
         <>
@@ -18,16 +18,15 @@ const DetailsDesc = ({ data }) => {
                 <ShopTitle
                     title={data.name}
                     subTitle={data.address}
-                    titleSize={SIZES.extraLarge}
+                    titleSize={SIZES.xxl}
                     subTitleSize={SIZES.font}
                 />
-
-                <Rate stars={data.stars} />
+                <FoodTypes foodTypes={data.foodTypes} />
             </View>
 
-            <View style={{ marginVertical: SIZES.extraLarge * 1.5 }}>
+            <View style={{ marginVertical: SIZES.xxl * 1.5 }}>
                 <Text style={{ fontSize: SIZES.font, fontFamily: FONTS.semiBold, color: COLORS.primary }}>
-                    Description
+                    Descrizione
                 </Text>
                 <View style={{ marginTop: SIZES.base }}>
                     <Text style={{
@@ -49,7 +48,7 @@ const DetailsDesc = ({ data }) => {
                                     setReadMore(true);
                                 }
                                 else {
-                                    setText(data.description.slice(0, 100));
+                                    setText(data.description.slice(0, SIZES.descriptionSize));
                                     setReadMore(false);
                                 }
                             }}>

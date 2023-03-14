@@ -2,14 +2,37 @@ import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from 'react-nati
 import { COLORS, SIZES, SHADOWS, FONTS, assets } from '../constants';
 import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc, DetailsBid } from '../components';
 import React from 'react';
+import Carousel from 'react-native-reanimated-carousel';
 
 const DetailsHeader = ({ data, navigation }) => (
     <View style={{ width: '100%', height: 373 }}>
         <Image
-            source={data.image}
+            source={data.images[0]}
             resizeMode='cover'
-            style={{ width: '100%', height: '100%' }}
-        />
+            style={{ width: '100%', height: '100%' }} />
+        {/*<Carousel
+            loop
+            width='100%'
+            height='100%'
+            autoPlay={true}
+            data={data.images}
+            scrollAnimationDuration={1000}
+            onSnapToItem={(index) => console.log('current index:', index)}
+            renderItem={({ index }) => (
+                <View
+                    style={{
+                        flex: 1,
+                        borderWidth: 1,
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Text style={{ textAlign: 'center', fontSize: 30 }}>
+                        {index}
+                    </Text>
+                </View>
+            )}
+                />*/}
+
         <CircleButton
             imgUrl={assets.left}
             handlePress={() => navigation.goBack()}
@@ -39,17 +62,17 @@ const Details = ({ route, navigation }) => {
                 renderItem={({ item }) => <DetailsBid bid={item} />}
                 keyExtractor={(item) => item.id}
                 showsVerticalScrollIndicator={false}
-                contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3 }}
+                contentContainerStyle={{ paddingBottom: SIZES.xxl * 3 }}
                 ListHeaderComponent={() => (
                     <React.Fragment>
                         <DetailsHeader data={data} navigation={navigation} />
-                        <SubInfo />
+                        <SubInfo data={data} />
                         <View style={{ padding: SIZES.font }}>
                             <DetailsDesc data={data} />
 
                             {data.bids.length > 0 &&
                                 <Text style={{ fontSize: SIZES.font, fontFamily: FONTS.semiBold, color: COLORS.primary }}>
-                                    Current Bids
+                                    Recensioni
                                 </Text>
                             }
                         </View>

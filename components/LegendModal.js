@@ -1,7 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import Modal from "react-native-modal";
-import { useState } from 'react';
 import { ImageCmp } from './SubInfo';
 import { SIZES, FONTS, FOOD, assets } from '../constants';
 import { CircleButton } from './Button';
@@ -24,8 +23,8 @@ const LegendModal = ({ open = false, onBackdropPressHandle }) => {
                 <Text style={{ marginBottom: 40, fontSize: SIZES.font * 1.5, fontFamily: FONTS.medium }}>Legenda: </Text>
                 {FOOD.map((food, i) => (
                     <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 20 }}>
-                        <ImageCmp imgUrl={assets[food]} index={0} key={`Food-${i}`} />
-                        <Text style={{ marginLeft: 40 }}> {food} </Text>
+                        <ImageCmp imgUrl={assets[food.name]} index={0} key={`Food-${i}`} />
+                        <Text style={{ marginLeft: 40 }}> {food.name} </Text>
                     </View>
                 ))}
                 <CircleButton imgUrl={assets.close} handlePress={onBackdropPressHandle} top={10} right={10} />

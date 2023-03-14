@@ -63,17 +63,18 @@ export const EndDate = () => {
     )
 }
 
-export const SubInfo = () => {
+export const SubInfo = ({ data }) => {
     return (
         <View style={{
             width: '100%',
-            paddingHorizontal: SIZES.font,
-            marginTop: -SIZES.extraLarge,
+            paddingHorizontal: SIZES.base,
+            marginTop: -SIZES.xxl + 5,
             flexDirection: 'row',
             justifyContent: 'space-between'
         }}>
-            <People />
-            <EndDate />
+            {/*<People />*/}
+            <Rate stars={data.stars} />
+            {/*<EndDate />*/}
         </View>
     )
 }
@@ -83,13 +84,13 @@ const showStars = (starsNumber) => {
     let i;
     const emptyStars = 5 - starsNumber;
     for (i = 1; starsNumber > 1 && i <= 5; ++i) {
-        stars.push(<MaterialIcons key={i} name="star" size={30} color="#FFA000" />);
+        stars.push(<MaterialIcons key={i} name="star" size={SIZES.starSize} color="#FFA000" />);
         starsNumber--;
     }
-    if (starsNumber > 0) stars.push(<MaterialIcons key={i} name="star-half" size={30} color="#FFA000" />);
+    if (starsNumber > 0) stars.push(<MaterialIcons key={i} name="star-half" size={SIZES.starSize} color="#FFA000" />);
 
     for (let j = 1; j <= emptyStars; ++j) {
-        stars.push(<MaterialIcons key={j + i} name="star-border" size={30} color="#FFA000" />);
+        stars.push(<MaterialIcons key={j + i} name="star-border" size={SIZES.starSize} color="#FFA000" />);
     }
     return stars;
 }
@@ -97,9 +98,9 @@ const showStars = (starsNumber) => {
 const showFoodTypes = (foodTypes) => {
     let i = 0;
     let foodTypesToShow = [];
-    for (let food of foodTypes.sort()) {
-        if (FOOD.includes(food)) {
-            const imageSrc = assets[food];
+    for (let foodName of foodTypes.sort((a, b) => a.course - b.course)) {
+        if (FOOD.filter(f => f.name === foodName).length > 0) {
+            const imageSrc = assets[foodName];
             foodTypesToShow.push(<ImageCmp imgUrl={imageSrc} index={i} marginLeft={20} subtractSize={6} key={`Food-${i}`} />);
         }
 
@@ -112,7 +113,7 @@ export const Rate = ({ stars }) => {
     return (
         <View style={{
             flexDirection: 'row',
-            alignItems: 'center'
+            alignItems: 'center',
         }}>
             {
                 showStars(stars)

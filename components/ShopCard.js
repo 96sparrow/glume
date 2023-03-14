@@ -12,13 +12,13 @@ const ShopCard = ({ data }) => {
             <View style={{
                 backgroundColor: COLORS.white,
                 borderRadius: SIZES.font,
-                marginBottom: SIZES.extraLarge,
+                marginBottom: SIZES.xxl,
                 margin: SIZES.base,
                 ...SHADOWS.dark
             }}>
                 <View style={{ width: '100%', height: 250 }}>
                     <Image
-                        source={data.image}
+                        source={data.images[0]}
                         resizeMode='cover'
                         style={{
                             width: '100%',
@@ -30,14 +30,14 @@ const ShopCard = ({ data }) => {
                     <CircleButton imgUrl={assets.heart} right={10} top={10} />
                 </View>
 
-                <SubInfo />
+                <SubInfo data={data} />
 
                 <View style={{ width: '100%', padding: SIZES.font }} >
                     <ShopTitle
                         title={data.name}
                         subTitle={data.address}
-                        titleSize={SIZES.large}
-                        subTitleSize={SIZES.small}
+                        titleSize={SIZES.xl}
+                        subTitleSize={SIZES.font}
                     />
 
                     <View style={{
@@ -46,7 +46,7 @@ const ShopCard = ({ data }) => {
                         justifyContent: 'space-between',
                         alignItems: 'center',
                     }}>
-                        <Rate stars={data.stars} />
+                        {/*<Rate stars={data.stars} />*/}
                         <FoodTypes foodTypes={data.foodTypes}></FoodTypes>
                         {/* VIEW WITH FOOD SYMBOLS: PIZZA, PASTA, ... */}
                         {/* <RectButton minWidth={120} fontSize={SIZES.font} handlePress={() => navigation.navigate('Details', { data })} /> */}

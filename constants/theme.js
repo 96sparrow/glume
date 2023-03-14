@@ -12,7 +12,10 @@ export const SIZES = {
   font: 14,
   medium: 16,
   large: 18,
-  extraLarge: 24,
+  xl: 21,
+  xxl: 24,
+  starSize: 35,
+  descriptionSize: 200
 };
 
 export const FONTS = {

@@ -10,7 +10,7 @@ export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
                 height: 40,
                 backgroundColor: COLORS.white,
                 position: 'absolute',
-                borderRadius: SIZES.extraLarge,
+                borderRadius: SIZES.xxl,
                 alignItems: 'center',
                 justifyContent: 'center',
                 ...SHADOWS.light,
@@ -27,7 +27,7 @@ export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
         <TouchableOpacity
             style={{
                 backgroundColor: COLORS.primary,
-                borderRadius: SIZES.extraLarge,
+                borderRadius: SIZES.xxl,
                 minWidth: minWidth,
                 padding: SIZES.small,
                 ...props
