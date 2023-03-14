@@ -1,37 +1,16 @@
-import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from 'react-native';
+import { View, Text, SafeAreaView, Image, StatusBar, FlatList, Dimensions } from 'react-native';
 import { COLORS, SIZES, SHADOWS, FONTS, assets } from '../constants';
 import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc, DetailsBid } from '../components';
 import React from 'react';
-import Carousel from 'react-native-reanimated-carousel';
+import ImageCarousel from '../components/ImageCarousel';
 
-const DetailsHeader = ({ data, navigation }) => (
+const DetailsHeader = ({ data, imageWidth, navigation }) => (
     <View style={{ width: '100%', height: 373 }}>
-        <Image
+        {/*<Image
             source={data.images[0]}
             resizeMode='cover'
-            style={{ width: '100%', height: '100%' }} />
-        {/*<Carousel
-            loop
-            width='100%'
-            height='100%'
-            autoPlay={true}
-            data={data.images}
-            scrollAnimationDuration={1000}
-            onSnapToItem={(index) => console.log('current index:', index)}
-            renderItem={({ index }) => (
-                <View
-                    style={{
-                        flex: 1,
-                        borderWidth: 1,
-                        justifyContent: 'center',
-                    }}
-                >
-                    <Text style={{ textAlign: 'center', fontSize: 30 }}>
-                        {index}
-                    </Text>
-                </View>
-            )}
-                />*/}
+style={{ width: '100%', height: '100%' }} />*/}
+        <ImageCarousel imageHeight={373} imageWidth={imageWidth} images={data.images} />
 
         <CircleButton
             imgUrl={assets.left}
@@ -49,6 +28,8 @@ const DetailsHeader = ({ data, navigation }) => (
 
 const Details = ({ route, navigation }) => {
     const { data } = route.params;
+    const imageWidth = Dimensions.get('window').width;
+
 
     return (
         <View style={{ flex: 1, backgroundColor: '#e8f7fa' }}>
@@ -65,7 +46,7 @@ const Details = ({ route, navigation }) => {
                 contentContainerStyle={{ paddingBottom: SIZES.xxl * 3 }}
                 ListHeaderComponent={() => (
                     <React.Fragment>
-                        <DetailsHeader data={data} navigation={navigation} />
+                        <DetailsHeader data={data} imageWidth={imageWidth} navigation={navigation} />
                         <SubInfo data={data} />
                         <View style={{ padding: SIZES.font }}>
                             <DetailsDesc data={data} />

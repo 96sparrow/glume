@@ -9,7 +9,7 @@ const ShopData = [
     foodTypes: ['pizza', 'hamburger'],
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
-    images: [assets.nft01, assets.nft03],
+    images: [assets.nft01, assets.nft03, assets.nft04],
     bids: [
       {
         id: "BID-11",
