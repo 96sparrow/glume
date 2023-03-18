@@ -1,12 +1,15 @@
-import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, Image, TouchableWithoutFeedback, Dimensions } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { COLORS, SIZES, SHADOWS, assets } from '../constants';
 import { CircleButton, RectButton } from './Button';
 import { SubInfo, Rate, ShopTitle, FoodTypes } from './SubInfo';
+import ImageCarousel from './ImageCarousel';
 
 const ShopCard = ({ data }) => {
     const navigation = useNavigation();
+    const imageWidth = Dimensions.get('window').width;
+    const imageHeight = Dimensions.get('window').imageHeight;
     return (
         <TouchableWithoutFeedback onPress={() => navigation.navigate('Details', { data })}>
             <View style={{
@@ -17,16 +20,7 @@ const ShopCard = ({ data }) => {
                 ...SHADOWS.dark
             }}>
                 <View style={{ width: '100%', height: 250 }}>
-                    <Image
-                        source={data.images[0]}
-                        resizeMode='cover'
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            borderTopLeftRadius: SIZES.font,
-                            borderTopRightRadius: SIZES.font
-                        }}
-                    />
+                    <ImageCarousel imageHeight={imageHeight} imageWidth={imageWidth} home={true} images={data.images} />
                     <CircleButton imgUrl={assets.heart} right={10} top={10} />
                 </View>
 

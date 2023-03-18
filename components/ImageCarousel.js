@@ -2,13 +2,18 @@ import React from 'react';
 import Carousel from 'react-native-reanimated-carousel';
 import { Dimensions } from 'react-native';
 import { Image } from 'react-native';
+import { SIZES } from '../constants';
 
 
-const ImageCarousel = ({ imageHeight, imageWidth, images }) => {
+const ImageCarousel = ({ imageHeight, imageWidth, images, home = false }) => {
     return (
         <Carousel
             loop
             height={imageHeight}
+            style={{
+                borderTopLeftRadius: home ? SIZES.font : 0,
+                borderTopRightRadius: home ? SIZES.font : 0
+            }}
             width={imageWidth}
             //autoPlay={true}
             data={images}
